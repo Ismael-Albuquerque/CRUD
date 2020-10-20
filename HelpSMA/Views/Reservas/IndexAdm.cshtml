@@ -1,0 +1,139 @@
+﻿@model IEnumerable<HelpSMA.Models.Reserva>
+
+@{
+    ViewData["Title"] = "IndexAdm";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css">
+    <title>Pedidos Cadastrados</title>
+</head>
+
+<body style="padding-top:10px">
+
+    <div class=" card text-center">
+        <div class=" bg-light mb-3">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="~/css/imagens/Logo.png" class="card-img"
+                         style="float: left; margin-right: auto;  position:center; height:70px; width:50px; margin-left:auto" />
+                </div>
+                <br />
+                <b>HELP DESK - Seção de Meios Auxiliares (SMA)</b>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class=" card-body">
+        <div class=" col-md-12">
+            <h5 class=" card-title"> <b>Bem-vindo(a)</b> </h5>
+            <p class=" card-text">@DateTime.Now</p>
+        </div>
+    </div>
+
+
+
+
+    <div class=" form-group">
+
+        <div class=" col-md-12">
+
+            <table class="table table-hover">
+
+                <thead class="thead-light">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Item)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Data)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Horário)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Solicitante)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Prioridade)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Responsável)
+                        </th>
+                        <th>
+                           @* @Html.DisplayNameFor(model => model.Situação)*@
+                            Situação para o Usuário
+                        </th>
+                        <th>
+                            @*@Html.DisplayNameFor(model => model.Status)*@
+                            Status na Seção
+                        </th>
+                        <th>
+                            Opções
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Item)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Data)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Horário)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Solicitante)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Prioridade)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Responsável)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Situação)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Status)
+                        </td>
+                        <td>
+                            <a asp-action="EditAdm" asp-route-id="@item.ReservaId">Alterar</a> |
+                            <a asp-action="DetailsAdm" asp-route-id="@item.ReservaId">Detalhes</a> 
+
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+
+            <a asp-action="Index" class="btn btn-primary">Logout</a>
+
+
+        </div>
+    </div>
+
+
+    <div class=" card text-left ">
+        <div class=" bg-light mb-3">
+            <div class=" card-footer text-muted">
+
+                © 2020 Ismael Albuquerque
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+﻿@model HelpSMA.Models.Reserva
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css">
+
+    <title>Nova Requisição</title>
+</head>
+<body style="padding-top:10px">
+
+    <div class=" card text-center">
+        <div class=" bg-light mb-3">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="~/css/imagens/Logo.png" class="card-img"
+                         style="float: left; margin-right: auto;  position:center; height:70px; width:50px; margin-left:auto" />
+                </div>
+                <br />
+                <b>HELP DESK - Seção de Meios Auxiliares (SMA)</b>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class=" container">
+
+
+        <div class=" form-group">
+
+            <div class=" col-md-6">
+
+                <h4>Nova Requisição</h4>
+                <br />
+
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="Item" class="control-label"></label>
+                        <input asp-for="Item" class="form-control" required autocomplete="off" />
+                        <span asp-validation-for="Item" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Data" class="control-label"></label>
+                        <input type="date" asp-for="Data" class="form-control" required autocomplete="off" />
+                        <span asp-validation-for="Data" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Horário" class="control-label"></label>
+                        <input asp-for="Horário" class="form-control" required autocomplete="off" placeholder="00:00" />
+                        <span asp-validation-for="Horário" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Solicitante" class="control-label">Solicitante (Posto/Graduação/Nome de Guerra)</label>
+                        <input asp-for="Solicitante" class="form-control" required autocomplete="off" />
+                        <span asp-validation-for="Solicitante" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Ramal" class="control-label"></label>
+                        <input asp-for="Ramal" class="form-control" required autocomplete="off" />
+                        <span asp-validation-for="Ramal" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Seção" class="control-label"></label>
+                        <input asp-for="Seção" class="form-control" required autocomplete="off" />
+                        <span asp-validation-for="Seção" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Mensagem" class="control-label">Solicitação do Serviço</label>
+                        <textarea class="form-control" asp-for="Mensagem" autocomplete="off"></textarea>
+                        <span asp-validation-for="Mensagem" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" value="Salvar" class="btn btn-primary" />
+                        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class=" card text-left ">
+        <div class=" bg-light mb-3">
+            <div class=" card-footer text-muted">
+
+                © 2020 Ismael Albuquerque
+
+            </div>
+        </div>
+    </div>
+</body>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</html>

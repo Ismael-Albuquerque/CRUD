@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelpSMA", "HelpSMA\HelpSMA.csproj", "{4CB1967A-ECD3-4BF9-84E2-3E7612A1123E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4CB1967A-ECD3-4BF9-84E2-3E7612A1123E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CB1967A-ECD3-4BF9-84E2-3E7612A1123E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CB1967A-ECD3-4BF9-84E2-3E7612A1123E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CB1967A-ECD3-4BF9-84E2-3E7612A1123E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CABF1D4D-0336-4B37-98AC-24BE9D83D419}
+	EndGlobalSection
+EndGlobal

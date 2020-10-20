@@ -1,0 +1,99 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css">
+    <script language="javascript" type="text/javascript" src="~/js/Login.js">
+
+        function acesso(form) {
+
+            /*Checa nome e senha - caso digite com letras maiúsculas será convertido para letras minúsculas */
+
+            form.nome.value = form.nome.value.toLowerCase()
+            form.senha.value = form.senha.value.toLowerCase()
+
+
+            if (form.nome.value == "sma" && form.senha.value == "brasil2014") {
+
+                location = "IndexAdm"
+            }
+
+            else {
+                form.nome.value = ""
+                form.senha.value = ""
+                alert("Dados Incorretos")
+            }
+
+        }
+    </script>
+
+    <title>Login Administrador</title>
+
+</head>
+
+<body style="padding-top:10px">
+
+    <div class=" card text-center">
+        <div class=" bg-light mb-3">
+            <div class="card-header">
+                <div class="logo">
+                    <img src="~/css/imagens/Logo.png" class="card-img"
+                         style="float: left; margin-right: auto;  position:center; height:70px; width:50px; margin-left:auto" />
+                </div>
+                <br />
+                <b>HELP DESK - Seção de Meios Auxiliares (SMA)</b>
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <div class=" container">
+        <div class=" card-body">
+            <div class=" col-md-12">
+                <h5 class=" card-title"> <b>Acesso Restrito</b> </h5>
+                <p class=" card-text">@DateTime.Now</p>
+
+
+
+                <form name="form">
+                    <div class=" form-group">
+                        <label class="control-label">Nome:</label>
+                        <input type="text" name="nome" autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label">Senha:</label>
+                        <input type="password" name="senha" autocomplete="off">
+                    </div>
+                    <br />
+
+                    <div class="form-group">
+                        <input type="button" name="botao" value="Login" onclick="acesso(this.form)" class="btn btn-primary" />
+                        <input type="reset" name="limpar" value="Limpar" class="btn btn-secondary"/>
+                        <a asp-action="Index" class="btn btn-secondary">Voltar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class=" card text-left ">
+        <div class=" bg-light mb-3">
+            <div class=" card-footer text-muted">
+
+                © 2020 Ismael Albuquerque
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
